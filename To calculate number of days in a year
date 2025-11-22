@@ -1,0 +1,4 @@
+"--- Give number of days in a Year ---------------
+PARAMETERS year TYPE n LENGTH 4.
+DATA(days_in_year) = SWITCH i( CONV numc1( substring( val = CONV d( CONV d( year && '0301' ) - 1 ) off = 7 len = 1 ) ) WHEN '9' THEN 366 ELSE 365 ).
+write: days_in_year.
